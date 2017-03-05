@@ -1,0 +1,10 @@
+dependency-reduced-pom.xml
+.idea
+.DS_Store
+*.iml
+*.ipl
+.idea/
+target
+target/
+temp/
+*.pyc
