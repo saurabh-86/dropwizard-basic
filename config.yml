@@ -11,16 +11,16 @@ database:
   user: "root"
 
   # the password
-  password: "password"
+  password: ""
 
   # the JDBC URL
-  url: jdbc:mysql://localhost:3306/dropwizard_basic
+  url: jdbc:mysql://backend-db:3306/dropwizard_basic
 
   # any properties specific to your JDBC driver:
   properties:
     charSet: UTF-8
     hibernate.dialect: org.hibernate.dialect.MySQLDialect
-    #hibernate.hbm2ddl.auto: create
+    hibernate.hbm2ddl.auto: create
     hibernate.show_sql: true
     hibernate.format_sql: true
 
