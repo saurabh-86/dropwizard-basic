@@ -17,7 +17,7 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public PersonDTO get(UUID personId) {
         Person personEntity = personDAO.findById(personId);
-        return PersonMapper.transform(personEntity);
+        return PersonMapper.INSTANCE.transform(personEntity);
     }
 
     @Override
@@ -27,7 +27,7 @@ public class PersonServiceImpl implements PersonService {
         if (personEntity == null)
             personEntity = new Person();
 
-        PersonMapper.updateEntity(personEntity, updatedPerson);
+        personEntity = PersonMapper.INSTANCE.updateEntity(updatedPerson, personEntity);
 
         personDAO.createOrUpdate(personEntity);
     }

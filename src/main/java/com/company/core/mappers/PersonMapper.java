@@ -2,22 +2,16 @@ package com.company.core.mappers;
 
 import com.company.api.PersonDTO;
 import com.company.db.entities.Person;
+import org.mapstruct.Mapper;
+import org.mapstruct.MappingTarget;
+import org.mapstruct.factory.Mappers;
 
-public class PersonMapper {
+@Mapper
+public interface PersonMapper {
 
-    public static PersonDTO transform(Person entity) {
-        PersonDTO dto = null;
-        if (entity != null) {
-            dto = PersonDTO.builder()
-                    .name(entity.getName())
-                    .version(entity.getVersion())
-                    .build();
-        }
-        return dto;
-    }
+    PersonMapper INSTANCE = Mappers.getMapper(PersonMapper.class);
 
-    public static void updateEntity(Person entity, PersonDTO dto) {
-        entity.setName(dto.getName());
-        entity.setVersion(dto.getVersion());
-    }
+    PersonDTO transform(Person entity);
+
+    Person updateEntity(PersonDTO personDTO, @MappingTarget Person person);
 }
