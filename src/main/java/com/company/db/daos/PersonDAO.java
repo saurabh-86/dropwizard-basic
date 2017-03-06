@@ -22,12 +22,7 @@ public class PersonDAO extends AbstractDAO<Person> {
         return super.uniqueResult(criteria);
     }
 
-    public UUID create(Person person) {
-        person.setId(UUID.randomUUID());
-        return persist(person).getId();
-    }
-
-    public void update(Person person) {
+    public void createOrUpdate(Person person) {
         persist(person);
     }
 

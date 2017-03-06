@@ -6,9 +6,7 @@ import java.util.UUID;
 
 public interface PersonService {
 
-    UUID createPerson(PersonDTO newPerson);
+    PersonDTO get(UUID personId);
 
-    PersonDTO getPerson(UUID personId);
-
-    void updatePerson(UUID personId, PersonDTO updatedPerson);
+    void createOrUpdate(UUID personId, PersonDTO updatedPerson);
 }
