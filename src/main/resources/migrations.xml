@@ -1,0 +1,26 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="saurabh (generated)" id="1488797968141-1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable catalogName="dropwizard_basic" schemaName="dropwizard_basic" tableName="Person">
+            <column name="internalId" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id" type="BINARY(16)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="version" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="saurabh (generated)" id="1488797968141-2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable catalogName="dropwizard_basic" schemaName="dropwizard_basic" tableName="hibernate_sequence">
+            <column name="next_val" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="saurabh (generated)" id="1488797968141-3" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey catalogName="dropwizard_basic" columnNames="internalId" constraintName="PRIMARY" schemaName="dropwizard_basic" tableName="Person"/>
+    </changeSet>
+    <changeSet author="saurabh (generated)" id="1488797968141-4" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createIndex catalogName="dropwizard_basic" indexName="IDX3blpx78aucutb5umaelf9essh" schemaName="dropwizard_basic" tableName="Person">
+            <column name="id"/>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>

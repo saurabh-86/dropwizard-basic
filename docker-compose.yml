@@ -11,6 +11,7 @@ services:
     working_dir: /usr/src/app
     entrypoint: >
       bash -c "mvn package -DskipTests &&
+      java -jar target/dropwizard-basic-1.0-SNAPSHOT.jar db migrate config.yml &&
       java -jar target/dropwizard-basic-1.0-SNAPSHOT.jar server config.yml"
     healthcheck:
       test: curl --fail --location http://localhost:8081/ping

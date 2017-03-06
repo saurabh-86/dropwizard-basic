@@ -2,6 +2,8 @@ package com.company;
 
 import com.hubspot.dropwizard.guice.GuiceBundle;
 import io.dropwizard.Application;
+import io.dropwizard.db.DataSourceFactory;
+import io.dropwizard.migrations.MigrationsBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
@@ -26,7 +28,13 @@ public class DropwizardBasicApplication extends Application<DropwizardBasicConfi
                 .build();
 
         bootstrap.addBundle(guiceBundle);
-//        bootstrap.addBundle(new MyHibernateBundle());
+
+        bootstrap.addBundle(new MigrationsBundle<DropwizardBasicConfiguration>() {
+            @Override
+            public DataSourceFactory getDataSourceFactory(DropwizardBasicConfiguration configuration) {
+                return configuration.getDatabase();
+            }
+        });
     }
 
     @Override
