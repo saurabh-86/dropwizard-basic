@@ -1,16 +1,17 @@
 package com.company.api;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Value;
-
-import java.util.UUID;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Builder(toBuilder = true)
-@Value
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PersonDTO {
-    private UUID id;
 
     private String name;
 

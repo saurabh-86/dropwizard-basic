@@ -22,9 +22,14 @@ public class PersonDAO extends AbstractDAO<Person> {
         return super.uniqueResult(criteria);
     }
 
-//    public long create(Person person) {
-//        return persist(person).getId();
-//    }
+    public UUID create(Person person) {
+        person.setId(UUID.randomUUID());
+        return persist(person).getId();
+    }
+
+    public void update(Person person) {
+        persist(person);
+    }
 
 //    public List<Person> findAll() {
 //        return list(namedQuery("com.example.helloworld.core.Person.findAll"));

@@ -27,4 +27,17 @@ public class PersonsResource {
     public PersonDTO get(@PathParam("personId") UUID personId) {
         return personService.getPerson(personId);
     }
+
+    @POST
+    @UnitOfWork
+    public UUID create(PersonDTO newPerson) {
+        return personService.createPerson(newPerson);
+    }
+
+    @PUT
+    @Path("/{personId}")
+    @UnitOfWork
+    public void update(@PathParam("personId") UUID personId, PersonDTO updatedPerson) {
+        personService.updatePerson(personId, updatedPerson);
+    }
 }
