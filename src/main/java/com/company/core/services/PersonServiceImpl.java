@@ -24,8 +24,10 @@ public class PersonServiceImpl implements PersonService {
     public void createOrUpdate(UUID personId, PersonDTO updatedPerson) {
         Person personEntity = personDAO.findById(personId);
 
-        if (personEntity == null)
+        if (personEntity == null) {
             personEntity = new Person();
+            personEntity.setId(personId);
+        }
 
         personEntity = PersonMapper.INSTANCE.updateEntity(updatedPerson, personEntity);
 

@@ -25,6 +25,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <org.mapstruct.version>1.2.0.Beta1</org.mapstruct.version>
         <org.projectlombok.version>1.16.14</org.projectlombok.version>
+        <jersey.version>2.23.1</jersey.version>
     </properties>
 
     <dependencyManagement>
@@ -49,6 +50,7 @@
                 <artifactId>mapstruct-jdk8</artifactId>
                 <version>${org.mapstruct.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct-processor</artifactId>
@@ -75,9 +77,15 @@
         </dependency>
 
         <dependency>
+            <groupId>io.dropwizard</groupId>
+            <artifactId>dropwizard-testing</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
             <groupId>com.hubspot.dropwizard</groupId>
             <artifactId>dropwizard-guice</artifactId>
-            <version>1.0.0.2</version>
+            <version>1.0.0.1</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
@@ -101,6 +109,11 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.glassfish.jersey.ext</groupId>
+            <artifactId>jersey-entity-filtering</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
     </dependencies>
 
     <build>

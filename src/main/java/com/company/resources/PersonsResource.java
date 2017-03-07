@@ -5,6 +5,7 @@ import com.company.core.services.PersonService;
 import com.google.inject.Inject;
 import io.dropwizard.hibernate.UnitOfWork;
 
+import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.UUID;
@@ -31,7 +32,7 @@ public class PersonsResource {
     @PUT
     @Path("/{personId}")
     @UnitOfWork
-    public void createOrUpdate(@PathParam("personId") UUID personId, PersonDTO updatedPerson) {
+    public void createOrUpdate(@PathParam("personId") UUID personId, @Valid PersonDTO updatedPerson) {
         personService.createOrUpdate(personId, updatedPerson);
     }
 }
