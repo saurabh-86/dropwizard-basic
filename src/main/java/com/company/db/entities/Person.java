@@ -15,7 +15,7 @@ import java.util.UUID;
 public class Person implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long internalId;
 
     @Column(columnDefinition = "BINARY(16)")
