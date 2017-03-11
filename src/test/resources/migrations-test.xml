@@ -1,7 +1,7 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
     <changeSet author="saurabh (generated)" id="1488797968141-1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
-        <createTable schemaName="dropwizard_basic_schema" tableName="Person">
+        <createTable tableName="Person">
             <column autoIncrement="true" name="internalId" type="BIGINT">
                 <constraints primaryKey="true"/>
             </column>
@@ -12,7 +12,7 @@
     </changeSet>
 
     <changeSet author="saurabh (generated)" id="1488797968141-4" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
-        <createIndex indexName="IDX3blpx78aucutb5umaelf9essh" schemaName="dropwizard_basic_schema" tableName="Person">
+        <createIndex indexName="IDX3blpx78aucutb5umaelf9essh" tableName="Person">
             <column name="id"/>
         </createIndex>
     </changeSet>
