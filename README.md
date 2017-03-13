@@ -18,6 +18,7 @@ What does the DropwizardBasic application include
 - **H2** in-memory SQL database for integration tests
 - As part of integration tests, the database migrations are automatically run on the H2 database.
 - *TODO* DEB file creation using maven plugin 
+- *TODO* Partial JSON response feature (see <https://jersey.java.net/documentation/latest/entity-filtering.html>)
 
 How to start the application in Docker
 ---
