@@ -26,7 +26,4 @@ public class PersonDAO extends AbstractDAO<Person> {
         persist(person);
     }
 
-//    public List<Person> findAll() {
-//        return list(namedQuery("com.example.helloworld.core.Person.findAll"));
-//    }
 }

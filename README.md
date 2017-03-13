@@ -1,5 +1,30 @@
 # DropwizardBasic
 
+Dropwizard framework makes web application development easy by putting together a lot of popular Java libraries together. 
+However, a lot of boilerplate is still required to get a quality Dropwizard application setup. 
+This project aims to reduce that work, and thereby save time, for developers.
+ 
+What does the DropwizardBasic application include
+---
+
+- Project structure created using Dropwizard's `io.dropwizard.archetypes:java-simple` maven archetype
+- A Jersey resource `/persons` supporting GET and PUT operations
+- A DAO class demonstrating **dropwizard-hibernate** integration
+- Auto-discovery of Hibernate entities and Jersey resources
+- **Lombok** for reducing boilerplate Java code
+- **MapStruct** for DTO transformations 
+- **Guice** for dependency injection
+- **Liquibase** for database migrations
+- **H2** in-memory SQL database for integration tests
+- As part of integration tests, the database migrations are automatically run on the H2 database.
+- *TODO* DEB file creation using maven plugin 
+
+How to start the application in Docker
+---
+
+1. Using the Docker Terminal, navigate to the `dropwizard-basic` project directory.
+2. Execute the command `docker-compose up`. This launches the Dropwizard application and a MySQL server.
+
 How to start the DropwizardBasic application
 ---
 

@@ -22,8 +22,7 @@ public class MyHibernateBundle
 
     private static ImmutableList<Class<?>> myDbEntities( ) {
         Reflections reflections = new Reflections("com.company.db.entities");
-        ImmutableList<Class<?>> entities = ImmutableList.copyOf(reflections.getTypesAnnotatedWith(Entity.class));
-        return entities;
+        return ImmutableList.copyOf(reflections.getTypesAnnotatedWith(Entity.class));
     }
 
     @Override

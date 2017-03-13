@@ -27,14 +27,14 @@ public class PersonResourceAcceptanceTest {
     @ClassRule
     public static final DropwizardAppRule<DropwizardBasicConfiguration> RULE =
             new DropwizardAppRule<>(DropwizardBasicApplication.class,
-                    ResourceHelpers.resourceFilePath("my-app-config.yaml"));
+                    ResourceHelpers.resourceFilePath("config.test.yml"));
 
     @BeforeClass
     public static void migrate() throws Exception {
         ManagedDataSource ds = RULE.getConfiguration().getDatabase()
                 .build(RULE.getEnvironment().metrics(), "migrations");
         try (Connection connection = ds.getConnection()) {
-            Liquibase migrator = new Liquibase("migrations-test.xml",
+            Liquibase migrator = new Liquibase("migrations.xml",
                     new ClassLoaderResourceAccessor(), new JdbcConnection(connection));
             migrator.update("");
         }

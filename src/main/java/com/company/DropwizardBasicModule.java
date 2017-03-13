@@ -13,6 +13,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 public class DropwizardBasicModule extends AbstractModule {
     @Override
     protected void configure() {
+        // put explicit bindings here using bind() methods
     }
 
     @Provides
