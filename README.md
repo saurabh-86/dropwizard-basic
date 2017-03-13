@@ -9,11 +9,11 @@ What does the DropwizardBasic application include
 
 - Project structure created using Dropwizard's `io.dropwizard.archetypes:java-simple` maven archetype
 - A Jersey resource `/persons` supporting GET and PUT operations
-- A DAO class demonstrating **dropwizard-hibernate** integration
+- A DAO class demonstrating **dropwizard-hibernate** integration (see http://hibernate.org/orm/)
 - Auto-discovery of Hibernate entities and Jersey resources
-- **Lombok** for reducing boilerplate Java code
-- **MapStruct** for DTO transformations 
-- **Guice** for dependency injection
+- **Lombok** for reducing boilerplate Java code (see https://projectlombok.org/)
+- **MapStruct** for DTO transformations (see http://mapstruct.org/) 
+- **Guice** for dependency injection (see https://github.com/google/guice)
 - **Liquibase** for database migrations
 - **H2** in-memory SQL database for integration tests
 - As part of integration tests, the database migrations are automatically run on the H2 database.
